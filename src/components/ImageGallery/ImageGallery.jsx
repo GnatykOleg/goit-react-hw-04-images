@@ -1,20 +1,27 @@
 import { ImageGalleryItem } from 'components';
 import PropTypes from 'prop-types';
+import Container from '../Container/Container';
 import s from './ImageGallery.module.css';
 
 export default function ImageGallery({ images, onSelectImage }) {
   return (
-    <ul className={s.imageGallery}>
-      {images.map(({ id, webformatURL, tags, largeImageURL }) => (
-        <ImageGalleryItem
-          key={id}
-          webformatURL={webformatURL}
-          tags={tags}
-          largeImageURL={largeImageURL}
-          onSelectImage={onSelectImage}
-        />
-      ))}
-    </ul>
+    <section>
+      <main>
+        <Container>
+          <ul className={s.list}>
+            {images.map(({ id, webformatURL, tags, largeImageURL }) => (
+              <ImageGalleryItem
+                key={id}
+                webformatURL={webformatURL}
+                tags={tags}
+                largeImageURL={largeImageURL}
+                onSelectImage={onSelectImage}
+              />
+            ))}
+          </ul>
+        </Container>
+      </main>
+    </section>
   );
 }
 

@@ -8,15 +8,14 @@ export default function ImageGalleryItem({
   onSelectImage,
 }) {
   return (
-    <li className={s.imageGalleryItem}>
+    <li className={s.item}>
       <img
         onClick={() => {
           onSelectImage(largeImageURL, tags);
         }}
-        className={s.imageGalleryItemImage}
+        className={s.img}
         src={webformatURL}
         alt={tags}
-        width="240"
       />
     </li>
   );
